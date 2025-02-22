@@ -87,7 +87,7 @@ public class GpsDashboard {
                 });
 
                 // Subscribe to the specified topic with QoS 1 for reliable message delivery
-                int qos = 1;
+                int qos = 1; // Ensuring message delivery at least once to the receiver
                 mqttClient.subscribe(TOPIC, qos);
                 System.out.println("Subscribed to topic: " + TOPIC + ". Listening for incoming GPS coordinates...");
 

@@ -70,16 +70,7 @@ public class GpsClient {
                 mqttClient.connect(options); // Connect to the MQTT broker
                 System.out.println("Connected successfully as " + clientId);
             } catch (MqttException e) {
-                System.out.println("❌ Failed to connect: " + e.getMessage());
-                System.out.println("Possible causes:");
-                System.out.println("1. The CA certificate may be incorrect or corrupted.");
-                System.out.println("2. The CA certificate may not match the broker's SSL certificate.");
-                System.out.println("3. The broker's certificate chain may be incomplete.");
-                System.out.println("Solution:");
-                System.out.println("✔️ Re-download the CA certificate directly from the broker's official site.");
-                System.out.println("✔️ Verify the certificate using: openssl x509 -in server_ca.crt -text -noout");
-                System.out.println("✔️ Import the CA certificate into Java's trust store if necessary:");
-                System.out.println("   keytool -import -trustcacerts -file src/main/resources/server_ca.crt -alias mqttbroker -keystore $JAVA_HOME/lib/security/cacerts -storepass changeit");
+                System.out.println("Failed to connect: " + e.getMessage());
                 return;
             }
 
