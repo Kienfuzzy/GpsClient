@@ -87,7 +87,7 @@ public class GpsClient {
                     mqttClient.publish(TOPIC, new MqttMessage(payload.getBytes()));
                     System.out.println("Published: " + payload);
                 } catch (MqttException e) {
-                    System.out.println("⚠️ Failed to publish: " + e.getMessage());
+                    System.out.println("Failed to publish: " + e.getMessage());
                 }
 
                 Thread.sleep(10000); // Wait 10 seconds before next publish
